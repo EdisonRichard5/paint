@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Paint</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div align="center" class="container">
+        <h1 align="center" id="titulo">Laboratorio web</h1>
+        <input id="range" type="range" onchange="tamano = this.value" min="1" max="100"><br>
+        <canvas id="miCanvas" width="900" height="500">
+            Su navegador no es compatible con Canvas.
+        </canvas>
+        <br>
+        <select align="left" name="fondo" id="fondo" onchange="cambiarFondo(this)" class="browser-default custom-select">
+            <option value="" disabled selected>Fondo Canvas</option>
+            <option value="white">Blanco</option>
+            <option value="black">Negro</option>
+            <option value="url('cursor/alfa.jpg')">Cuadros</option>
+        </select>
+        <div class="btn-group">
+            <input id="lapiz" type="button" class="btn btn-primary" value="Lapiz" onclick="herramienta = 'lapiz' ">
+            <input id="linea" type="button" class="btn btn-primary" value="Linea" onclick="herramienta = 'linea' ">
+            <input id="borrador"type="button" class="btn btn-primary" value="Borrador" onclick="herramienta = 'borrador' ">
+            <input type="button" class="btn btn-primary" value="Borrador Todo" id="borradorT">
+        </div>
+        <input type="color" class="btn btn-primary" onload="color_princ = this.value" onchange="color_princ = this.value">
+        <input type="button" class="btn btn-primary" value="Pintar Lienzo" id="lienzo">
+        <br>
+        <a id="descargar">
+            <input class="btn btn-default" type="button" value="Guardar imagen">
+        </a>
+    </div>
+</body>
+</html>
